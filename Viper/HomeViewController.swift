@@ -8,8 +8,9 @@
 
 import UIKit
 
-protocol ColorValueDelegate{
+protocol HomeViewDelegate : class{
    func onColorValueChanged() -> ()
+    func onColorLoad(rgb : (CGFloat,CGFloat,CGFloat)) -> ()
 }
 
 
@@ -23,17 +24,17 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var rgbColorValue: UILabel!
     
-    //We should on expose presentator through protocol defined
-    var presenter : HomeViewPresentation?
+
     
+    var viewModel : HomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        viewModel = HomeViewModel(parentView : self)
 
-        loadCurrentColor()
-        
+        onColorLoad(rgb: viewModel!.currentColor!)
         
         
         
@@ -53,29 +54,12 @@ class HomeViewController: UIViewController {
     }
     
     
-    func saveCurrentColor(rgb: (CGFloat, CGFloat, CGFloat) ) -> (){
-        print("Current Color are saved")
-        
-        presenter?.onColorValueChanged(rgb: rgb)
-        
-        
-    }
-    
-    func loadCurrentColor() -> (){
-        
-        print("Current Color are loaded")
-        
-        
-        print("VC delegating loadCurentColor to presenter")
-        
-        presenter?.loadCurrentColor()
-    }
-    
     
 }
 
 
-extension HomeViewController : ColorValueDelegate{
+extension HomeViewController : HomeViewDelegate{
+    
     
     func onColorValueChanged() {
         
@@ -87,42 +71,34 @@ extension HomeViewController : ColorValueDelegate{
         
         let blue = CGFloat(round(blueSlider.value/step) * step)
         
+        
         rgbColorValue.text = "RGB value (\(red),\(green),\(blue))"
         
-        
-        saveCurrentColor(rgb: (red, green, blue))
+        viewModel?.saveColor(rgb: (Float(red), Float(green), Float(blue)))
         
         view.backgroundColor = UIColor(red: red/255, green : green/255, blue: blue/255, alpha: 1)
     }
-
     
-}
-
-
-//Conformance so VIPER components consider it as a View 
-extension HomeViewController : HomeView{
-    func onLoadCurrentColor(rgb: (CGFloat, CGFloat, CGFloat)) {
-        
-                rgbColorValue.text = "RGB value (\(rgb.0),\(rgb.1),\(rgb.2))"
+    
+    
+    func onColorLoad(rgb: (CGFloat, CGFloat, CGFloat)) {
         
         
-                redSlider.value = Float(rgb.0)
+        rgbColorValue.text = "RGB value (\(rgb.0),\(rgb.1),\(rgb.2))"
         
-                blueSlider.value = Float(rgb.1)
+        redSlider.value = Float(rgb.0)
         
-                greenSlider.value = Float(rgb.2)
+        greenSlider.value = Float(rgb.1)
         
-                view.backgroundColor = UIColor(red: rgb.0/255, green : rgb.1/255, blue: rgb.2/255, alpha: 1)
+        blueSlider.value = Float(rgb.2)
         
         
+        view.backgroundColor = UIColor(red: rgb.0/255, green : rgb.1/255, blue: rgb.2/255, alpha: 1)
     }
     
+
+
     
 }
 
 
-
-//Color Change to interactor
-//No Ui presentator
-//navigation Router
-//Entity is database persistence of data
