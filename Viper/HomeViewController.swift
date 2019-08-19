@@ -23,24 +23,20 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var rgbColorValue: UILabel!
     
+    //We should on expose presentator through protocol defined
+    var presenter : HomeViewPresentation?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-        let rgb = loadCurrentColor()
-        
-        rgbColorValue.text = "RGB value (\(rgb.0),\(rgb.1),\(rgb.2))"
+
+        loadCurrentColor()
         
         
-        redSlider.value = Float(rgb.0)
         
-        blueSlider.value = Float(rgb.1)
         
-        greenSlider.value = Float(rgb.2)
-        
-        view.backgroundColor = UIColor(red: rgb.0/255, green : rgb.1/255, blue: rgb.2/255, alpha: 1)
     }
 
     @IBAction func redSliderValueChanged(_ sender: UISlider) {
@@ -57,22 +53,22 @@ class HomeViewController: UIViewController {
     }
     
     
-    func saveCurrentColor(rgb : (CGFloat,CGFloat,CGFloat) ) -> (){
-        
-        UserDefaults.standard.set(rgb.0, forKey: "Red")
-        UserDefaults.standard.set(rgb.1, forKey: "Green")
-        UserDefaults.standard.set(rgb.2, forKey: "Blue")
+    func saveCurrentColor(rgb: (CGFloat, CGFloat, CGFloat) ) -> (){
         print("Current Color are saved")
+        
+        presenter?.onColorValueChanged(rgb: rgb)
+        
+        
     }
     
-    func loadCurrentColor() -> (CGFloat,CGFloat,CGFloat){
+    func loadCurrentColor() -> (){
         
-        let red = UserDefaults.standard.float(forKey: "Red")
-        let green = UserDefaults.standard.float(forKey: "Green")
-        let blue = UserDefaults.standard.float(forKey: "Green")
         print("Current Color are loaded")
-        return (CGFloat(red),CGFloat(green),CGFloat(blue))
         
+        
+        print("VC delegating loadCurentColor to presenter")
+        
+        presenter?.loadCurrentColor()
     }
     
     
@@ -93,6 +89,7 @@ extension HomeViewController : ColorValueDelegate{
         
         rgbColorValue.text = "RGB value (\(red),\(green),\(blue))"
         
+        
         saveCurrentColor(rgb: (red, green, blue))
         
         view.backgroundColor = UIColor(red: red/255, green : green/255, blue: blue/255, alpha: 1)
@@ -100,6 +97,29 @@ extension HomeViewController : ColorValueDelegate{
 
     
 }
+
+
+//Conformance so VIPER components consider it as a View 
+extension HomeViewController : HomeView{
+    func onLoadCurrentColor(rgb: (CGFloat, CGFloat, CGFloat)) {
+        
+                rgbColorValue.text = "RGB value (\(rgb.0),\(rgb.1),\(rgb.2))"
+        
+        
+                redSlider.value = Float(rgb.0)
+        
+                blueSlider.value = Float(rgb.1)
+        
+                greenSlider.value = Float(rgb.2)
+        
+                view.backgroundColor = UIColor(red: rgb.0/255, green : rgb.1/255, blue: rgb.2/255, alpha: 1)
+        
+        
+    }
+    
+    
+}
+
 
 
 //Color Change to interactor

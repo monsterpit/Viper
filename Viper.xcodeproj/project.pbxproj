@@ -12,6 +12,8 @@
 		89404690230A6B7C00FBEA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8940468E230A6B7C00FBEA37 /* Main.storyboard */; };
 		89404692230A6B7D00FBEA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89404691230A6B7D00FBEA37 /* Assets.xcassets */; };
 		89404695230A6B7D00FBEA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89404693230A6B7D00FBEA37 /* LaunchScreen.storyboard */; };
+		8940469D230A789E00FBEA37 /* HomeControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940469C230A789E00FBEA37 /* HomeControllerBuilder.swift */; };
+		8940469F230A899B00FBEA37 /* AppColorDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940469E230A899B00FBEA37 /* AppColorDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		89404691230A6B7D00FBEA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89404694230A6B7D00FBEA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89404696230A6B7D00FBEA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8940469C230A789E00FBEA37 /* HomeControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerBuilder.swift; sourceTree = "<group>"; };
+		8940469E230A899B00FBEA37 /* AppColorDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				89404691230A6B7D00FBEA37 /* Assets.xcassets */,
 				89404693230A6B7D00FBEA37 /* LaunchScreen.storyboard */,
 				89404696230A6B7D00FBEA37 /* Info.plist */,
+				8940469C230A789E00FBEA37 /* HomeControllerBuilder.swift */,
+				8940469E230A899B00FBEA37 /* AppColorDao.swift */,
 			);
 			path = Viper;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8940469F230A899B00FBEA37 /* AppColorDao.swift in Sources */,
+				8940469D230A789E00FBEA37 /* HomeControllerBuilder.swift in Sources */,
 				8940468D230A6B7C00FBEA37 /* HomeViewController.swift in Sources */,
 				8940468B230A6B7C00FBEA37 /* AppDelegate.swift in Sources */,
 			);
