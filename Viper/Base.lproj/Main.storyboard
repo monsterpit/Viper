@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,6 +42,13 @@
                                     <action selector="redSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HaT-iJ-J8f"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2w-HL-Wjp">
+                                <rect key="frame" x="184" y="737" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextVCButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLs-MW-UZT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -50,7 +57,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FK7-uO-1TU" secondAttribute="bottom" constant="20" id="J0b-UM-Tmg"/>
                             <constraint firstItem="KoP-s6-3Qb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mo4-rX-ZM6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FK7-uO-1TU" secondAttribute="trailing" constant="20" id="QNx-2T-LOY"/>
+                            <constraint firstItem="FK7-uO-1TU" firstAttribute="top" secondItem="D2w-HL-Wjp" secondAttribute="bottom" constant="45" id="WiH-4n-X9V"/>
                             <constraint firstItem="YkJ-VO-DqJ" firstAttribute="top" secondItem="ddL-1Z-LoY" secondAttribute="bottom" constant="40" id="aDl-sP-NVQ"/>
+                            <constraint firstItem="D2w-HL-Wjp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cEO-NW-O1I"/>
                             <constraint firstItem="ddL-1Z-LoY" firstAttribute="top" secondItem="KoP-s6-3Qb" secondAttribute="bottom" constant="40" id="fPY-Ni-Z59"/>
                             <constraint firstItem="ddL-1Z-LoY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iEO-Xs-OQZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KoP-s6-3Qb" secondAttribute="trailing" constant="20" id="kc8-5M-ikN"/>
@@ -69,6 +78,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="Tbe-dp-vLh">
+            <objects>
+                <viewController storyboardIdentifier="ColorViewController" id="L7j-RB-ncg" customClass="ColorViewController" customModule="Viper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbb-on-J6y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxA-Wk-ANb">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHD-jT-cA9">
+                                <rect key="frame" x="40" y="84" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="L7j-RB-ncg" eventType="touchUpInside" id="dGz-2r-bTP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CHD-jT-cA9" firstAttribute="top" secondItem="vZ5-BU-ZLV" secondAttribute="top" constant="40" id="3zL-Ea-7Zm"/>
+                            <constraint firstItem="fxA-Wk-ANb" firstAttribute="centerX" secondItem="cbb-on-J6y" secondAttribute="centerX" id="O6K-Do-Nn8"/>
+                            <constraint firstItem="fxA-Wk-ANb" firstAttribute="centerY" secondItem="cbb-on-J6y" secondAttribute="centerY" id="mMm-Bk-eRX"/>
+                            <constraint firstItem="CHD-jT-cA9" firstAttribute="leading" secondItem="vZ5-BU-ZLV" secondAttribute="leading" constant="40" id="xnO-P2-g6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vZ5-BU-ZLV"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="fxA-Wk-ANb" id="ryj-1M-bUZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bb8-CK-TD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="84"/>
         </scene>
     </scenes>
 </document>

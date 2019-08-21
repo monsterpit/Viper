@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		8940468B230A6B7C00FBEA37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940468A230A6B7C00FBEA37 /* AppDelegate.swift */; };
-		8940468D230A6B7C00FBEA37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940468C230A6B7C00FBEA37 /* HomeViewController.swift */; };
 		89404690230A6B7C00FBEA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8940468E230A6B7C00FBEA37 /* Main.storyboard */; };
 		89404692230A6B7D00FBEA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89404691230A6B7D00FBEA37 /* Assets.xcassets */; };
 		89404695230A6B7D00FBEA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89404693230A6B7D00FBEA37 /* LaunchScreen.storyboard */; };
 		8940469F230A899B00FBEA37 /* AppColorDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940469E230A899B00FBEA37 /* AppColorDao.swift */; };
-		894046BF230AADF200FBEA37 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894046BE230AADF200FBEA37 /* ViewModel.swift */; };
+		8959FE0F230D527D00BA3841 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959FE0A230D527D00BA3841 /* HomeViewController.swift */; };
+		8959FE10230D527D00BA3841 /* HomeControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959FE0B230D527D00BA3841 /* HomeControllerBuilder.swift */; };
+		8959FE11230D527D00BA3841 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959FE0D230D527D00BA3841 /* ColorViewController.swift */; };
+		8959FE12230D527D00BA3841 /* ColorControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959FE0E230D527D00BA3841 /* ColorControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89404687230A6B7C00FBEA37 /* Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8940468A230A6B7C00FBEA37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8940468C230A6B7C00FBEA37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8940468F230A6B7C00FBEA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89404691230A6B7D00FBEA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89404694230A6B7D00FBEA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89404696230A6B7D00FBEA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8940469E230A899B00FBEA37 /* AppColorDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorDao.swift; sourceTree = "<group>"; };
-		894046BE230AADF200FBEA37 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8959FE0A230D527D00BA3841 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8959FE0B230D527D00BA3841 /* HomeControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerBuilder.swift; sourceTree = "<group>"; };
+		8959FE0D230D527D00BA3841 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		8959FE0E230D527D00BA3841 /* ColorControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorControllerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +63,33 @@
 			isa = PBXGroup;
 			children = (
 				8940468A230A6B7C00FBEA37 /* AppDelegate.swift */,
-				8940468C230A6B7C00FBEA37 /* HomeViewController.swift */,
 				8940468E230A6B7C00FBEA37 /* Main.storyboard */,
 				89404691230A6B7D00FBEA37 /* Assets.xcassets */,
 				89404693230A6B7D00FBEA37 /* LaunchScreen.storyboard */,
+				8959FE0C230D527D00BA3841 /* ColorVC */,
+				8959FE09230D527D00BA3841 /* HomeViewController */,
 				89404696230A6B7D00FBEA37 /* Info.plist */,
 				8940469E230A899B00FBEA37 /* AppColorDao.swift */,
-				894046BE230AADF200FBEA37 /* ViewModel.swift */,
 			);
 			path = Viper;
+			sourceTree = "<group>";
+		};
+		8959FE09230D527D00BA3841 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8959FE0A230D527D00BA3841 /* HomeViewController.swift */,
+				8959FE0B230D527D00BA3841 /* HomeControllerBuilder.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		8959FE0C230D527D00BA3841 /* ColorVC */ = {
+			isa = PBXGroup;
+			children = (
+				8959FE0D230D527D00BA3841 /* ColorViewController.swift */,
+				8959FE0E230D527D00BA3841 /* ColorControllerBuilder.swift */,
+			);
+			path = ColorVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				894046BF230AADF200FBEA37 /* ViewModel.swift in Sources */,
 				8940469F230A899B00FBEA37 /* AppColorDao.swift in Sources */,
-				8940468D230A6B7C00FBEA37 /* HomeViewController.swift in Sources */,
+				8959FE12230D527D00BA3841 /* ColorControllerBuilder.swift in Sources */,
 				8940468B230A6B7C00FBEA37 /* AppDelegate.swift in Sources */,
+				8959FE10230D527D00BA3841 /* HomeControllerBuilder.swift in Sources */,
+				8959FE11230D527D00BA3841 /* ColorViewController.swift in Sources */,
+				8959FE0F230D527D00BA3841 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
