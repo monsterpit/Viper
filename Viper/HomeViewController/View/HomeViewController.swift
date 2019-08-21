@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func nextVCButtonPressed(_ sender: UIButton) {
-        presenter?.showColorValue(with: (redSlider.value, greenSlider.value, blueSlider.value), from: self)
+        presenter?.showColorValue(with: (redSlider.value, greenSlider.value, blueSlider.value))
     }
     
     func saveCurrentColor(rgb: (CGFloat, CGFloat, CGFloat) ) -> (){
